@@ -44,6 +44,10 @@ func insertSaltAndHash(runes []rune, salt string) string {
 	return hex.EncodeToString(sum[:])
 }
 
+func printInfo(name string, v any) {
+	fmt.Printf("%s: type=%T, value=%v\n", name, v, v)
+}
+
 func main() {
 
 	var numDecimal int = 42
@@ -54,13 +58,13 @@ func main() {
 	var isActive bool = true
 	var complexNum complex64 = 1 + 2i
 
-	fmt.Printf("numDecimal: type=%T, value=%v\n", numDecimal, numDecimal)
-	fmt.Printf("numOctal: type=%T, value=%v\n", numOctal, numOctal)
-	fmt.Printf("numHexadecimal: type=%T, value=%v\n", numHexadecimal, numHexadecimal)
-	fmt.Printf("pi: type=%T, value=%v\n", pi, pi)
-	fmt.Printf("name: type=%T, value=%q\n", name, name)
-	fmt.Printf("isActive: type=%T, value=%v\n", isActive, isActive)
-	fmt.Printf("complexNum: type=%T, value=%v\n\n", complexNum, complexNum)
+	printInfo("numDecimal", numDecimal)
+	printInfo("numOctal", numOctal)
+	printInfo("numHexadecimal", numHexadecimal)
+	printInfo("pi", pi)
+	printInfo("name", name)
+	printInfo("isActive", isActive)
+	printInfo("complexNum", complexNum)
 
 	combined := concatToString(numDecimal, numOctal, numHexadecimal, pi, name, isActive, complexNum)
 	fmt.Println("Combined string:")
