@@ -7,7 +7,7 @@ type StringIntMap struct {
 
 // Add добавляет или обновляет значение по ключу.
 func (m *StringIntMap) Add(key string, value int) {
-	// Ленивое создание мапы, если она ещё nil.
+	
 	if m.data == nil {
 		m.data = make(map[string]int)
 	}
