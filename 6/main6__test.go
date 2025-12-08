@@ -34,7 +34,7 @@ func TestRandomGeneratorDeterministic(t *testing.T) {
 	r2 := rand.New(rand.NewSource(seed))
 
 	ch1 := randomGeneratorWithRand(count, min, max, r1)
-	ch2 := randomGeneratorWithRand(count, max, max, r2)
+	ch2 := randomGeneratorWithRand(count, min, max, r2)
 
 	var s1, s2 []int
 	for v := range ch1 {
